@@ -11,13 +11,18 @@
 
 ## Projects
 
-[Are Taller NBA Players More Successful?]([url](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb))
+# [Are Taller NBA Players More Successful?]([https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb])
+
+
 Description:
 The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
 
+
 Skills: Data cleaning, Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
 
+
 Technology: Python, NumPy, Matplotlib, Jupyter Notebook
+
 
 Results:
 The analysis revealed that:
@@ -33,7 +38,7 @@ All-NBA team selections are rare, with an average of just 0.17 appearances per p
 The findings provide insights into the performance trends of taller NBA players in the modern era.
 
 
-[Machine Learning Classifiers and Clustering]([url](https://raw.githubusercontent.com/hmoore200/Portfolio/refs/heads/main/Classifiers_Code.Rmd))
+# [Machine Learning Classifiers and Clustering](https://raw.githubusercontent.com/hmoore200/Portfolio/refs/heads/main/Classifiers_Code.Rmd)
 
 Goal:
 To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
