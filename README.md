@@ -1,4 +1,4 @@
-## Heather Moore Data Science Portfolio
+# Heather Moore Data Science Portfolio
 
   Hello! My name is Heather Moore and this is my professional portfolio. I graduated with Bachelors degree in economics with a minor in data science at Iowa State University. Currently I am finishing my Masters (MS) in Data Science. During my academic career I gained proficiency in the programming languages Python, R, and SQL. 
 
@@ -9,9 +9,9 @@
  [Resume](https://github.com/hmoore200/Portfolio/blob/885d61afa387a1c47df1acc93fa2e9811d22722e/Resume_2025.pdf)
 
 
-## Projects
+## Projects: 
 
-# [Are Taller NBA Players More Successful?]([https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb])
+### [Are Taller NBA Players More Successful?]([https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb])
 
 
 Description:
@@ -38,7 +38,7 @@ All-NBA team selections are rare, with an average of just 0.17 appearances per p
 The findings provide insights into the performance trends of taller NBA players in the modern era.
 
 
-# [Machine Learning Classifiers and Clustering](https://raw.githubusercontent.com/hmoore200/Portfolio/refs/heads/main/Classifiers_Code.Rmd)
+### [Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
 
 Goal:
 To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
