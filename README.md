@@ -13,9 +13,9 @@
 
 ### [Are Taller NBA Players More Successful?]([https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb])
 
+Goal: This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
 
-Description:
-The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
+Description: The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
 
 
 Skills: Data cleaning, Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
@@ -40,11 +40,9 @@ The findings provide insights into the performance trends of taller NBA players 
 
 ### [Machine Learning Classifiers and Clustering]([https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd])
 
-Goal:
-To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
+Goal: To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
 
-Description:
-The project involved analyzing two classification datasets (binary and trinary). 
+Description: The project involved analyzing two classification datasets (binary and trinary). 
 
 Data Preparation & Exploration:
 
