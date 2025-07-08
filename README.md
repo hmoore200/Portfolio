@@ -96,3 +96,63 @@ Key Insight:
 
 k-NN was better suited than linear classifiers (e.g., logistic regression) due to non-linear data patterns.
 
+
+## [Natural Language Processing(NLP) - Text Classification with Logistic Regression](https://github.com/hmoore200/Portfolio/blob/main/NLP.ipynb)
+
+### Goal:
+To build and evaluate a binary text classification model using traditional Natural Language Processing (NLP) techniques and logistic regression, focusing on accuracy and effectiveness of preprocessing steps.
+
+### Description:
+This project applied core NLP and machine learning principles to classify text data into binary categories (e.g., positive or negative sentiment). Key steps included:
+
+  1. Text Preprocessing & Feature Engineering:
+  Loaded a labeled text dataset containing raw sentences and corresponding sentiment labels.
+
+Cleaned text by:
+
+  - Lowercasing all characters.
+
+  - Removing stopwords using NLTK.
+
+  - Tokenizing and reconstructing text.
+
+  - Converted processed text into numerical features using CountVectorizer (Bag-of-Words model), creating sparse feature vectors.
+
+  2. Model Training & Evaluation:
+  Split the dataset into 75% training and 25% testing sets.
+  
+  Trained a Logistic Regression classifier using the count-based features.
+  
+  Evaluated model performance using accuracy, achieving:
+  
+  96.25% accuracy on the test set.
+  
+  Confirmed that logistic regression was highly effective given the linearly separable nature of the vectorized text data.
+
+### Skills:
+- NLP preprocessing (stopwords, tokenization, normalization).
+
+- Feature extraction (CountVectorizer).
+
+- Model training (Logistic Regression).
+
+- Supervised learning evaluation (train/test split, accuracy score).
+
+- Data pipeline design (clean → vectorize → model → evaluate).
+
+### Technology:
+Python, pandas, sklearn, nltk
+
+### Results:
+Logistic Regression Performance:
+
+  - Achieved 96.25% accuracy on unseen data.
+
+  - Demonstrated strong generalization with minimal overfitting.
+
+  - Preprocessing Impact:
+
+  - Stopword removal and normalization significantly improved model performance.
+
+### Key Insight:
+Simpler models like logistic regression, when paired with clean and well-engineered text features, can produce high accuracy in classification tasks—even without deep learning or embeddings
