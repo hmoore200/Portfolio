@@ -156,3 +156,72 @@ Logistic Regression Performance:
 
 ### Key Insight:
 Simpler models like logistic regression, when paired with clean and well-engineered text features, can produce high accuracy in classification tasks—even without deep learning or embeddings
+
+## [Employee Attrition Prediction with Logistic Regression](https://github.com/hmoore200/Portfolio/blob/main/Employee%20Attrition.ipynb)
+
+### Goal:
+To identify the key factors that influence employee attrition and build a logistic regression model to predict whether an employee is likely to leave the organization.
+
+### Description:
+This project explores employee attrition using a labeled dataset. It focuses on data exploration, logistic regression modeling, and evaluation to understand the relationship between various job-related features and attrition outcomes.
+
+  #### 1. Data Preparation & Exploration:
+  Loaded and inspected the employee attrition dataset.
+  
+  Checked for null values and confirmed data cleanliness.
+  
+  Conducted exploratory analysis to understand:
+  
+  The distribution of attrition (Yes/No).
+  
+  Key categorical variables (e.g., Department, Job Role, Marital Status).
+  
+  Numeric relationships with attrition (e.g., Monthly Income, Age, Overtime).
+  
+  Visualized patterns using bar plots and value counts to identify potential predictors.
+  
+ #### 2. Model Implementation:
+  Converted categorical variables into dummy variables using one-hot encoding.
+  
+  Split the dataset into training (75%) and testing (25%) sets.
+  
+  Trained a Logistic Regression model on the preprocessed data.
+  
+  Evaluated the model using accuracy score and confusion matrix:
+  
+  Model Accuracy: 87.67% on the test set.
+  
+  Correctly identified most "No Attrition" cases but slightly underpredicted "Yes" cases.
+  
+  Visualized prediction distribution and confusion matrix to assess misclassification areas.
+
+### Skills:
+Data preprocessing (encoding, feature selection).
+
+Exploratory data analysis (categorical vs. target relationships).
+
+Supervised learning (logistic regression modeling).
+
+Classification metrics (accuracy, confusion matrix).
+
+Visualization (bar charts, value counts, prediction histograms).
+
+### Technology:
+Python, pandas, matplotlib, seaborn, sklearn
+
+### Results:
+  Logistic Regression Performance:
+  
+  Achieved 87.67% accuracy on the test data.
+  
+  Model was better at predicting "No Attrition" than "Yes Attrition."
+  
+  Important Factors Identified:
+  
+  Overtime, Monthly Income, and Job Role showed strong correlations with attrition.
+  
+  Employees with overtime were more likely to leave.
+
+### Key Insight:
+
+Logistic regression effectively modeled the probability of attrition, but improvements could be made with techniques like SMOTE (for imbalance) or more complex classifiers (e.g., Random Forests).
