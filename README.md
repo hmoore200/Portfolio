@@ -13,18 +13,22 @@
 
 ## [Are Taller NBA Players More Successful?](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb )
 
-Goal: This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
+### Goal: 
+This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
 
-Description: The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
-
-
-Skills: Data cleaning, Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
-
-
-Technology: Python, NumPy, Matplotlib, Jupyter Notebook
+### Description: 
+  The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
 
 
-Results:
+###Skills: 
+Data cleaning Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
+
+
+ ### Technology: 
+ Python, NumPy, Matplotlib, Jupyter Notebook
+
+
+### Results:
 The analysis revealed that:
 
 Effective field goal percentage (eFG%) for tall players averages 48.16%, with most falling between 44.5% and 53.7%.
@@ -40,17 +44,19 @@ The findings provide insights into the performance trends of taller NBA players 
 
 ## [Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
 
-Goal: To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
+### Goal: 
+To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
 
-Description: The project involved analyzing two classification datasets (binary and trinary). 
+### Description: 
+The project involved analyzing two classification datasets (binary and trinary). 
 
-Data Preparation & Exploration:
+### Data Preparation & Exploration:
 
 Loaded and visualized binary and trinary datasets using scatter plots to assess linear separability.
 
 Computed Euclidean distances between feature vectors to understand data distribution.
 
-Model Implementation:
+### Model Implementation:
 
 Applied k-NN classifiers (k=3,5,10,15,20,25) to both datasets, splitting data into train/test sets (75/25).
 
@@ -62,7 +68,7 @@ Used k-means (k=2 to 12) on a clustering dataset, visualizing results for each *
 
 Identified the "elbow point" (k=8) to determine optimal cluster count based on average distance metrics.
 
-Skills:
+### Skills:
 Data visualization (ggplot2, scatter plots).
 
 Distance metrics (Euclidean).
@@ -75,14 +81,14 @@ Statistical analysis (model comparison).
 
 Technology: R, ggplot2, class, e1071, stats libraries.
 
-Results:
+### Results:
 k-NN Performance:
 
 Binary dataset achieved ~97% accuracy across most *k* values.
 
 Trinary dataset accuracy declined slightly (80% to 76%) as *k* increased.
 
-Clustering:
+### Clustering:
 
 k-means revealed diminishing returns beyond k=8 clusters.
 
