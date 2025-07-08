@@ -38,7 +38,7 @@ All-NBA team selections are rare, with an average of just 0.17 appearances per p
 The findings provide insights into the performance trends of taller NBA players in the modern era.
 
 
-[Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
+## [Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
 
 Goal: To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
 
