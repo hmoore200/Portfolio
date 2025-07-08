@@ -20,11 +20,10 @@ This project aims to analyze the performance trends of tall NBA players (6'7" an
   The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
 
 
-###Skills: 
+### Skills: 
 Data cleaning Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
 
-
- ### Technology: 
+### Technology: 
  Python, NumPy, Matplotlib, Jupyter Notebook
 
 
