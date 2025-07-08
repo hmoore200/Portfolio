@@ -11,7 +11,7 @@
 
 ## Projects: 
 
-[Are Taller NBA Players More Successful?]([https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb])
+## [Are Taller NBA Players More Successful?](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb )
 
 Goal: This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
 
@@ -38,7 +38,7 @@ All-NBA team selections are rare, with an average of just 0.17 appearances per p
 The findings provide insights into the performance trends of taller NBA players in the modern era.
 
 
-[Machine Learning Classifiers and Clustering]([https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd])
+[Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
 
 Goal: To evaluate the performance of k-Nearest Neighbors (k-NN) and k-means clustering algorithms on different datasets, comparing their accuracy and determining optimal cluster counts.
 
