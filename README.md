@@ -122,11 +122,7 @@ Cleaned text by:
   
   Trained a Logistic Regression classifier using the count-based features.
   
-  Evaluated model performance using accuracy, achieving:
-  
-  96.25% accuracy on the test set.
-  
-  Confirmed that logistic regression was highly effective given the linearly separable nature of the vectorized text data.
+  Evaluated model performance using accuracy
 
 ### Skills:
 - NLP preprocessing (stopwords, tokenization, normalization).
@@ -224,3 +220,79 @@ Python, pandas, matplotlib, seaborn, sklearn
 ### Key Insight:
 
 Logistic regression effectively modeled the probability of attrition, but improvements could be made with techniques like SMOTE (for imbalance) or more complex classifiers (e.g., Random Forests).
+
+## [Natural Language Processing - Airline Reviews](https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb)
+
+### Overview:
+This project leverages Natural Language Processing to classify IMDB movie reviews as positive or negative. The workflow includes cleaning and preprocessing text, feature extraction with TF-IDF, and training several classification models.
+
+### Key Features:
+
+Preprocessing: Removal of punctuation, stopwords, stemming, and tokenization.
+
+Feature Extraction: TF-IDF vectorization to represent text numerically.
+
+Models Used: Naive Bayes and Logistic Regression.
+
+Visualization: Word clouds and confusion matrix for interpretability.
+
+### Tools & Libraries:
+pandas, scikit-learn, nltk, wordcloud, matplotlib
+
+### Results:
+
+Best Accuracy: ~88% using Logistic Regression with TF-IDF features.
+
+Confusion Matrix: Demonstrated balanced performance on both positive and negative classes.
+
+Insights: Frequent positive review words included “great”, “amazing”, while negative reviews featured “bad”, “worst” prominently.
+
+## [Student Dropout Rate Analysis](https://github.com/hmoore200/Portfolio/blob/main/Student%20Dropout%20Rates.ipynb)
+
+### Overview:
+This regression project explores the Boston Housing dataset to build predictive models for median home prices. It involves exploratory analysis, multivariate regression, and model comparison.
+
+### Key Features:
+
+Data Analysis: Correlation matrix, pairplots, and feature importance visualization.
+
+Modeling: Linear Regression, Decision Tree, Random Forest.
+
+Evaluation Metrics: MAE, MSE, RMSE, R².
+
+Tools & Libraries:
+pandas, matplotlib, seaborn, scikit-learn
+
+### Results:
+
+Best Model: Random Forest Regressor with an R² score of ~0.87 on test data.
+
+Top Features: Number of rooms (RM), % lower status population (LSTAT), and pupil-teacher ratio (PTRATIO).
+
+Insight: More rooms and lower LSTAT values correlate with higher housing prices.
+
+
+### [Boston Housing Market Analysis](https://github.com/hmoore200/Portfolio/blob/main/Term%20Project%201-Boston%20Housing%20Market.ipynb)
+### Overview:
+This classification project analyzes student demographic and academic data to predict the likelihood of dropouts. It aims to help educators intervene early with at-risk students.
+
+### Key Features:
+
+Data Cleaning: Handling missing values and encoding categorical variables.
+
+Visualization: Heatmaps, boxplots, and distribution plots.
+
+Models Used: Logistic Regression and Random Forest Classifier.
+
+Evaluation Metrics: Accuracy, precision, recall, and F1-score.
+
+Tools & Libraries:
+pandas, matplotlib, seaborn, scikit-learn
+
+### Results:
+
+Best Model: Random Forest Classifier with accuracy around 91%.
+
+Important Predictors: GPA, number of absences, parental education level.
+
+Key Insight: Low GPA and high absenteeism were the strongest indicators of dropout risk.
