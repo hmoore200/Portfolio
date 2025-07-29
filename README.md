@@ -343,6 +343,41 @@ CSV and Google Sheets data sources
 
 Infographic-style data storytelling
 
+## [Netflix Viewership Analysis](https://github.com/hmoore200/Portfolio/blob/main/DSC_640_Wk%201_2.ipynb)
+This project explores and visualizes Netflix viewership trends using global and country-specific datasets. The goal is to identify the most popular titles, examine the impact of language and format (TV vs Film), and analyze performance over time.
+
+### Key Objectives:
+Identify the top-performing English and Non-English titles on Netflix.
+
+Compare weekly viewership trends for TV shows and movies.
+
+Analyze box office-style metrics like views in the first 91 days.
+
+Explore geographic trends in viewership across different countries.
+
+### Tools Used:
+Python (Pandas, Matplotlib, Seaborn)
+
+Jupyter Notebook
+
+Datasets from Netflix Top 10
+
+### Key Visuals & Insights:
+Bar plots of the top 20 most-viewed titles globally.
+
+Boxplots comparing performance between TV and Film formats.
+
+Geographic comparisons of popular content by country.
+
+Insights on how language affects viewership reach.
+
+### Notable Findings:
+English-language titles dominate globally but several Non-English titles have strong regional performance.
+
+Sales/viewership often spikes during holidays or notable release months.
+
+The first 91 days of release are critical for content success.
+
 ## [Are Taller NBA Players More Successful?](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb )
 
 ### Goal: 
