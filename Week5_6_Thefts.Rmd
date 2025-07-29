@@ -1,0 +1,320 @@
+---
+title: "Week_5_6_Kia_Thefts"
+author: "Heather"
+date: "2025-07-01"
+output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## Write up:
+
+  This project is intended for the general public, with a specific focus on local residents in Milwaukee. As someone who previously owned a Kia, I understand the importance of raising awareness about vehicle theft, especially for Kia and Hyundai drivers. Thefts of these car brands have become increasingly common in cities across the country, and Milwaukee is no exception. It's essential that people are informed so they can take practical steps to protect themselves and their vehicles. Because this audience consists of everyday community members rather than data professionals, the visualizations are designed to be clear, simple, and easy to understand. If the content were presented on a local news broadcast or in an online article, it should be accessible to anyone watching or reading.
+
+  The main goal of this project is to inform Kia and Hyundai owners and encourage them to be proactive about safeguarding their vehicles. By presenting clear data on the rise in thefts, drivers can better understand the risks and consider actions like purchasing steering wheel locks, installing tracking devices, or simply parking in safer, well-lit areas. Making this information available can help people make better choices and feel more secure in their daily routines.
+
+  To share the data effectively, I chose to create an infographic modeled after those commonly used in news media. The design emphasizes clarity and ease of use. I applied Gestalt principles, including alignment, proximity, and similarity, to organize elements in a way that guides the viewer’s attention naturally. Color was used thoughtfully to distinguish between categories, while text size and spacing were carefully considered to make the information easy to read and visually balanced.
+
+  The infographic includes several types of visualizations: a stacked area chart, bar chart, donut chart, pie chart, and stacked bar chart. These were selected to highlight trends, proportions, and comparisons in a way that is engaging and easy to interpret. The visuals aim to tell a compelling story about the increase in vehicle thefts while remaining approachable for a general audience.
+
+  During the preparation of the data set, I made necessary adjustments to ensure accuracy and clarity. This included filling in missing values, recalculating percentages when needed, and making small formatting changes to support clean, readable graphs. All changes were made with integrity and transparency. The final result is a responsible and informative project that communicates an important message in a format that is both meaningful and accessible to the public.
+  
+Import Packages and the four data set
+
+```{r}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+```
+
+Data Cleaning : Car Thefts
+
+```{r}
+# Car Theft
+car_theft = read.csv("C:/Users/14027/Documents/Graduate_Schoolish/DSC_640/Week5_6/kiaHyundaiThefts.csv")
+
+## Check for NAs 
+colSums(is.na(car_theft))
+
+#Fill the DC State column 
+car_theft <- car_theft %>% replace_na(list(state = "DC"))
+#Creating a new percent colmn
+#I found some issues with the calculations
+car_theft$PercentOfKiaHyundaiTheft <- car_theft$countKiaHyundaiThefts/car_theft$countOtherThefts * 100
+
+#Round the percent column 
+
+car_theft = car_theft %>% mutate(PercentOfKiaHyundaiTheft = round(PercentOfKiaHyundaiTheft, 0))
+
+#Stacked Area Chart 
+library(ggplot2)
+library(maps)
+
+car_theft %>%
+  mutate(Date = as.Date(paste(year, match(month, month.abb), "01", sep = "-"))) %>%
+  group_by(Date, state) %>%
+  summarise(Thefts = sum(countKiaHyundaiThefts)) %>%
+  ggplot(aes(x = Date, y = Thefts, fill = state)) +
+  geom_area() +
+  labs(title = "Stacked Area Chart of Kia/Hyundai Thefts by State", y = "Thefts") +
+  theme_minimal()
+
+#Bar Chart 
+# Add season mapping
+season_map <- c(
+  "Dec" = "Winter", "Jan" = "Winter", "Feb" = "Winter",
+  "Mar" = "Spring", "Apr" = "Spring", "May" = "Spring",
+  "Jun" = "Summer", "Jul" = "Summer", "Aug" = "Summer",
+  "Sep" = "Fall", "Oct" = "Fall", "Nov" = "Fall"
+)
+
+monthly_state_raw <- car_theft %>%
+  mutate(
+    season = recode(month, !!!season_map),
+    month = factor(month, levels = c(
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ))
+  ) %>%
+  group_by(state, season) %>%
+  summarise(
+    KiaHyundai = sum(countKiaHyundaiThefts, na.rm = TRUE),
+    Other = sum(countOtherThefts, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Pivot longer
+season_state_long <- monthly_state_raw %>%
+  pivot_longer(cols = c(KiaHyundai, Other),
+               names_to = "Type",
+               values_to = "Count")
+
+# Plot by season
+ggplot(season_state_long, aes(x = season, y = Count, fill = Type)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~ state) +
+  labs(
+    title = "Seasonal Auto Thefts by Vehicle Type and State",
+    x = "Season",
+    y = "Number of Thefts",
+    fill = "Vehicle Type"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+Data Cleaning: Vice_Theft
+
+```{r}
+#Extra Cleaning for this dataset
+vice_theft = read.csv("https://docs.google.com/spreadsheets/d/1-6614t_Ata5k7oESrm-HAdF1uOe8aPGRaQECl44GYeE/export?format=csv&id=1-6614t_Ata5k7oESrm-HAdF1uOe8aPGRaQECl44GYeE&gid=0",skip = 1, header = FALSE)
+
+# Create the list of cities in the dataset
+cities <- c(
+  "Denver", "El Paso", "Portland", "Atlanta", "Chicago", "Virginia Beach", 
+  "Louisville", "San Diego", "Sacramento", "Dallas", "Fort Worth", "Bakersfield", 
+  "Omaha_NE", "Lubbock_TX", "Fremont_CA", "San_Antonio", "Irving_TX", "Madison_WI", 
+  "Frisco_TX", "Lincoln_NE", "Wichita_KS", "Plano_TX", "Akron_OH", "Buffalo_NY", 
+  "Chula_Vista_CA", "Reno_NV", "Oxnard_CA", "San_Francisco", "McKinney_TX", 
+  "Arlington_TX", "Garland_TX", "Riverside_County_CA", "Stockton_CA", 
+  "Corpus_Cristi_TX", "Cincinatti", "Montgomery_County_MD", "Henderson_NV", 
+  "San_Bernardino_CA", "Newport_News_VA", "Amarillo_TX", "New_Haven_CT", 
+  "Washington_DC", "Boise_ID", "Austin_TX", "Chandler_AZ", "Modesto_CA", 
+  "San_Jose_CA", "Aurora_IL", "Vancouver_WA", "Raleigh_NC", "St_Petersburg_FL", 
+  "Milwaukee_WI", "Los_Angeles_CA", "Glendale_AZ", "Orlando_FL", "Eugene_OR", 
+  "Rochester_NY", "Durham_NC", "Norfolk_VA", "Pittsburgh_PA", "Miami_FL", 
+  "Spokane_WA", "Salt_Lake_City_UT", "Minneapolis_MN", "Anaheim_CA", 
+  "Providence_RI", "Syracuse_NY", "Peoria_AZ", "Houston_TX", 
+  "Prince_Georges_County_MD"
+)
+
+#Create the for loop with all of the columns
+column_names <- c("Month")
+for (city in cities) {
+  column_names <- c(column_names,
+                    paste0(city, "_KiaHyundais"),
+                    paste0(city, "_All"),
+                    paste0(city, "_Percent"))
+}
+
+#Apply this information to the dataset
+colnames(vice_theft) <- column_names
+#Drop the first row
+vice_theft=vice_theft[- 1, ]  
+
+#Droping the backslash in teh month column 
+vice_theft$Month = gsub("\\/", " ",vice_theft$Month)
+
+# Line Graph
+
+# Clean percentage columns (remove % and convert to numeric)
+df <- vice_theft %>%
+  mutate(across(ends_with("Percent"), ~ as.numeric(gsub("%", "", .))))
+
+# Reshape for plotting
+df_long <- df %>%
+  pivot_longer(cols = ends_with("Percent"),
+               names_to = "City",
+               values_to = "Percent") %>%
+  mutate(City = gsub("_Percent", "", City))
+
+
+# Get top 10 cities by average percent
+top_cities <- df_long %>%
+  group_by(City) %>%
+  summarise(avg = mean(Percent, na.rm = TRUE)) %>%
+  arrange(desc(avg)) %>%
+  slice_head(n = 10) %>%
+  pull(City)
+
+# Filter only those cities
+df_top <- df_long %>% filter(City %in% top_cities)
+
+# Filter to Jan 2023 to Jul 2023
+filtered_data <- vice_theft %>%
+  filter(str_detect(Month, "23"), str_detect(Month, "Jan|Feb|Mar|Apr|May|Jun|Jul"))
+# Select Kia/Hyundai columns and reshape to long format
+kia_long <- filtered_data %>%
+  select(Month, ends_with("_KiaHyundais")) %>%
+  pivot_longer(cols = -Month, names_to = "City", values_to = "Thefts") %>%
+  mutate(
+    City = str_replace(City, "_KiaHyundais", ""),
+    Thefts = as.numeric(Thefts)
+  )
+
+# Aggregate thefts by city
+city_summary <- kia_long %>%
+  group_by(City) %>%
+  summarise(TotalThefts = sum(Thefts, na.rm = TRUE)) %>%
+  arrange(desc(TotalThefts)) %>% 
+  slice_head(n = 5)
+
+# Create donut chart
+ggplot(city_summary, aes(x = 2, y = TotalThefts, fill = City)) +
+  geom_col(width = 1) +
+  coord_polar(theta = "y") +
+  xlim(0.5, 2.5) +
+  labs(title = "Top 5 Cities for Kia/Hyundai Thefts (Jan–Jul 2023)") +
+  theme_void() +
+  theme(legend.position = "right")
+
+
+
+
+```
+
+
+Data Cleaning: Wi Theft
+
+```{r}
+Wi_theft = read.csv("C:/Users/14027/Documents/Graduate_Schoolish/DSC_640/Week5_6/KiaHyundaiMilwaukeeData.csv")
+
+#Creating a new percent columns 
+Wi_theft$PercentOfKiaHyundaiTheft <- Wi_theft$countKiaHyundaiThefts/Wi_theft$countOtherThefts * 100
+
+#Rounding the column 
+Wi_theft = Wi_theft %>% mutate(PercentOfKiaHyundaiTheft = round(PercentOfKiaHyundaiTheft, 0))
+
+#Bar Chart
+library(tidyverse)
+
+# Group by month and summarize average thefts
+monthly_avg <- Wi_theft %>%
+  group_by(month) %>%
+  summarise(
+    avg_KiaHyundai = mean(countKiaHyundaiThefts, na.rm = TRUE),
+    avg_Other = mean(countOtherThefts, na.rm = TRUE)
+  ) %>%
+  # To order months correctly
+  mutate(month = factor(month, levels = month.abb))
+
+#Pivot longer for plotting
+monthly_avg_long <- monthly_avg %>%
+  pivot_longer(cols = starts_with("avg_"), names_to = "Type", values_to = "Average") %>%
+  mutate(Type = recode(Type,
+                       "avg_KiaHyundai" = "Kia/Hyundai",
+                       "avg_Other" = "Other"))
+
+# Create the Bar chart
+ggplot(monthly_avg_long, aes(x = month, y = Average, fill = Type)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average Monthly Auto Thefts in Milwaukee",
+    x = "Month", y = "Average Number of Thefts",
+    fill = "Vehicle Type"
+  ) +
+  theme_minimal()
+
+## Pie Chart
+
+# Calculate percent and angle
+kia_avg_monthly <- monthly_avg %>%
+  arrange(desc(month)) %>%
+  mutate(
+    Percent = round(avg_KiaHyundai / sum(avg_KiaHyundai) * 100, 1),
+    Label = paste0(month, ": ", Percent, "%"),
+    ypos = cumsum(avg_KiaHyundai) - 0.5 * avg_KiaHyundai,
+    angle = 90 - 360 * (ypos / sum(avg_KiaHyundai))  # dynamic angle for each slice
+  )
+
+# Plot with rotated labels
+ggplot(kia_avg_monthly, aes(x = "", y = avg_KiaHyundai, fill = month)) +
+  geom_col(width = 1) +
+  coord_polar(theta = "y") +
+  geom_text(aes(label = Label, angle = angle), 
+            position = position_stack(vjust = 0.5), 
+            size = 3) +
+  labs(title = "Average Monthly Kia/Hyundai Thefts in Milwaukee") +
+  theme_void() +
+  theme(legend.position = "none")
+
+```
+
+Theft Map
+
+```{r}
+library(stringr)
+theft_map = read.csv("C:/Users/14027/Documents/Graduate_Schoolish/DSC_640/Week5_6/carTheftsMap.csv")
+
+library(tidyverse)
+library(stringr)
+
+# 1. Reshape the data from wide to long format
+theft_long <- theft_map %>%
+  select(geo_name, starts_with("countCarThefts")) %>%
+  pivot_longer(
+    cols = starts_with("countCarThefts"),
+    names_to = "Year",
+    values_to = "Thefts"
+  ) %>%
+  mutate(
+    Year = str_extract(Year, "\\d+"),
+    Thefts = as.numeric(Thefts)
+  )
+
+# 2. Get top 10 agencies by total thefts
+top_agencies <- theft_long %>%
+  group_by(geo_name) %>%
+  summarise(total = sum(Thefts, na.rm = TRUE)) %>%
+  arrange(desc(total)) %>%
+  slice_head(n = 10) %>%
+  pull(geo_name)
+
+# 3. Filter to top 10 agencies
+theft_top <- theft_long %>%
+  filter(geo_name %in% top_agencies)
+
+# 4. Create the stacked bar chart
+ggplot(theft_top, aes(x = Year, y = Thefts, fill = geo_name)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Top 10 Agencies: Stacked Bar Chart of Car Thefts (2019–2022)",
+    x = "Year", y = "Number of Car Thefts", fill = "Agency"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+
+```
