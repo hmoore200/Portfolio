@@ -10,35 +10,178 @@
 
 
 ## Projects: 
+## [Natural Language Processing - Airline Reviews](https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb)
 
-## [Are Taller NBA Players More Successful?](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb )
+### Overview:
+This project leverages Natural Language Processing to classify IMDB movie reviews as positive or negative. The workflow includes cleaning and preprocessing text, feature extraction with TF-IDF, and training several classification models.
 
-### Goal: 
-This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
+### Key Features:
 
-### Description: 
-  The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
+Preprocessing: Removal of punctuation, stopwords, stemming, and tokenization.
 
+Feature Extraction: TF-IDF vectorization to represent text numerically.
 
-### Skills: 
-Data cleaning Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
+Models Used: Naive Bayes and Logistic Regression.
 
-### Technology: 
- Python, NumPy, Matplotlib, Jupyter Notebook
+Visualization: Word clouds and confusion matrix for interpretability.
 
+### Tools & Libraries:
+pandas, scikit-learn, nltk, wordcloud, matplotlib
 
 ### Results:
-The analysis revealed that:
 
-Effective field goal percentage (eFG%) for tall players averages 48.16%, with most falling between 44.5% and 53.7%.
+Best Accuracy: ~88% using Logistic Regression with TF-IDF features.
 
-Points per game (PTS) show a right-skewed distribution, with most players averaging 2–8 PPG.
+Confusion Matrix: Demonstrated balanced performance on both positive and negative classes.
 
-Rebounding (TRB) clusters around 1.9–4.8 RPG for the majority of players.
+Insights: Frequent positive review words included “great”, “amazing”, while negative reviews featured “bad”, “worst” prominently.
 
-All-NBA team selections are rare, with an average of just 0.17 appearances per player.
+## [Boston Housing Market Analysis](https://github.com/hmoore200/Portfolio/blob/main/Term%20Project%201-Boston%20Housing%20Market.ipynb) 
 
-The findings provide insights into the performance trends of taller NBA players in the modern era.
+### Overview:
+This regression project explores the Boston Housing dataset to build predictive models for median home prices. It involves exploratory analysis, multivariate regression, and model comparison.
+
+### Key Features:
+
+Data Analysis: Correlation matrix, pairplots, and feature importance visualization.
+
+Modeling: Linear Regression, Decision Tree, Random Forest.
+
+Evaluation Metrics: MAE, MSE, RMSE, R².
+
+Tools & Libraries:
+pandas, matplotlib, seaborn, scikit-learn
+
+### Results:
+
+Best Model: Random Forest Regressor with an R² score of ~0.87 on test data.
+
+Top Features: Number of rooms (RM), % lower status population (LSTAT), and pupil-teacher ratio (PTRATIO).
+
+Insight: More rooms and lower LSTAT values correlate with higher housing prices.
+
+
+## [Walmart Time Series Analysis using ARIMA](https://github.com/hmoore200/Portfolio/blob/main/Milestone%203_%20Walmart%20Time%20Series.ipynb)
+
+This project focuses on analyzing and forecasting weekly sales data from Walmart using time series modeling techniques, specifically the ARIMA (AutoRegressive Integrated Moving Average) model. The dataset includes various economic indicators such as fuel price, temperature, CPI, and unemployment, along with holiday flags for specific weeks.
+
+### Key Components:
+
+Data Cleaning & Exploration: Handled missing values, converted date columns, and visualized trends such as total weekly sales and store-level performance.
+
+Exploratory Data Analysis (EDA): Generated visual insights through time plots, heatmaps, boxplots (holiday vs. non-holiday sales), and store comparison bar charts.
+
+Time Series Modeling: Applied ARIMA models to both the full dataset and individual stores (e.g., Store #4). Forecasted future sales and evaluated model accuracy using Root Mean Squared Error (RMSE).
+
+### Insights & Recommendations:
+
+Sales consistently spike during holiday seasons.
+
+High-performing stores should be studied to replicate success.
+
+Store-specific modeling yielded better forecasting accuracy than overall modeling.
+
+Tools & Libraries Used:
+
+Python (Pandas, Matplotlib, Seaborn, Statsmodels)
+
+Jupyter Notebook
+
+
+## [Student Dropout Rate Analysis](https://github.com/hmoore200/Portfolio/blob/main/Student%20Dropout%20Rates.ipynb)
+### Overview:
+This classification project analyzes student demographic and academic data to predict the likelihood of dropouts. It aims to help educators intervene early with at-risk students.
+
+### Key Features:
+
+Data Cleaning: Handling missing values and encoding categorical variables.
+
+Visualization: Heatmaps, boxplots, and distribution plots.
+
+Models Used: Logistic Regression and Random Forest Classifier.
+
+Evaluation Metrics: Accuracy, precision, recall, and F1-score.
+
+Tools & Libraries:
+pandas, matplotlib, seaborn, scikit-learn
+
+### Results:
+
+Best Model: Random Forest Classifier with accuracy around 91%.
+
+Important Predictors: GPA, number of absences, parental education level.
+
+Key Insight: Low GPA and high absenteeism were the strongest indicators of dropout risk.
+
+## [Employee Attrition Prediction with Logistic Regression](https://github.com/hmoore200/Portfolio/blob/main/Employee%20Attrition.ipynb)
+
+### Goal:
+To identify the key factors that influence employee attrition and build a logistic regression model to predict whether an employee is likely to leave the organization.
+
+### Description:
+This project explores employee attrition using a labeled dataset. It focuses on data exploration, logistic regression modeling, and evaluation to understand the relationship between various job-related features and attrition outcomes.
+
+  #### 1. Data Preparation & Exploration:
+  Loaded and inspected the employee attrition dataset.
+  
+  Checked for null values and confirmed data cleanliness.
+  
+  Conducted exploratory analysis to understand:
+  
+  The distribution of attrition (Yes/No).
+  
+  Key categorical variables (e.g., Department, Job Role, Marital Status).
+  
+  Numeric relationships with attrition (e.g., Monthly Income, Age, Overtime).
+  
+  Visualized patterns using bar plots and value counts to identify potential predictors.
+  
+ #### 2. Model Implementation:
+  Converted categorical variables into dummy variables using one-hot encoding.
+  
+  Split the dataset into training (75%) and testing (25%) sets.
+  
+  Trained a Logistic Regression model on the preprocessed data.
+  
+  Evaluated the model using accuracy score and confusion matrix:
+  
+  Model Accuracy: 87.67% on the test set.
+  
+  Correctly identified most "No Attrition" cases but slightly underpredicted "Yes" cases.
+  
+  Visualized prediction distribution and confusion matrix to assess misclassification areas.
+
+### Skills:
+Data preprocessing (encoding, feature selection).
+
+Exploratory data analysis (categorical vs. target relationships).
+
+Supervised learning (logistic regression modeling).
+
+Classification metrics (accuracy, confusion matrix).
+
+Visualization (bar charts, value counts, prediction histograms).
+
+### Technology:
+Python, pandas, matplotlib, seaborn, sklearn
+
+### Results:
+  Logistic Regression Performance:
+  
+  Achieved 87.67% accuracy on the test data.
+  
+  Model was better at predicting "No Attrition" than "Yes Attrition."
+  
+  Important Factors Identified:
+  
+  Overtime, Monthly Income, and Job Role showed strong correlations with attrition
+  
+  Employees with overtime were more likely to leave.
+
+### Key Insight:
+
+Logistic regression effectively modeled the probability of attrition, but improvements could be made with techniques like SMOTE (for imbalance) or more complex classifiers (e.g., Random Forests).
+
 
 
 ## [Machine Learning Classifiers and Clustering](https://github.com/hmoore200/Portfolio/blob/main/Classifiers_Code.Rmd)
@@ -152,147 +295,81 @@ Logistic Regression Performance:
 ### Key Insight:
 Simpler models like logistic regression, when paired with clean and well-engineered text features, can produce high accuracy in classification tasks—even without deep learning or embeddings
 
-## [Employee Attrition Prediction with Logistic Regression](https://github.com/hmoore200/Portfolio/blob/main/Employee%20Attrition.ipynb)
+## [Kia & Hyundai Theft Awareness Analysis](https://github.com/hmoore200/Portfolio/blob/main/Week5_6_Thefts.Rmd)
 
-### Goal:
-To identify the key factors that influence employee attrition and build a logistic regression model to predict whether an employee is likely to leave the organization.
+This project uses real-world data to raise public awareness about the increasing rate of Kia and Hyundai vehicle thefts across the U.S., with a special focus on Milwaukee. Designed for a general audience—especially local residents and car owners—the project translates complex data into clear, impactful visualizations that encourage proactive safety measures.
 
-### Description:
-This project explores employee attrition using a labeled dataset. It focuses on data exploration, logistic regression modeling, and evaluation to understand the relationship between various job-related features and attrition outcomes.
+### Project Goals:
 
-  #### 1. Data Preparation & Exploration:
-  Loaded and inspected the employee attrition dataset.
-  
-  Checked for null values and confirmed data cleanliness.
-  
-  Conducted exploratory analysis to understand:
-  
-  The distribution of attrition (Yes/No).
-  
-  Key categorical variables (e.g., Department, Job Role, Marital Status).
-  
-  Numeric relationships with attrition (e.g., Monthly Income, Age, Overtime).
-  
-  Visualized patterns using bar plots and value counts to identify potential predictors.
-  
- #### 2. Model Implementation:
-  Converted categorical variables into dummy variables using one-hot encoding.
-  
-  Split the dataset into training (75%) and testing (25%) sets.
-  
-  Trained a Logistic Regression model on the preprocessed data.
-  
-  Evaluated the model using accuracy score and confusion matrix:
-  
-  Model Accuracy: 87.67% on the test set.
-  
-  Correctly identified most "No Attrition" cases but slightly underpredicted "Yes" cases.
-  
-  Visualized prediction distribution and confusion matrix to assess misclassification areas.
+Inform Milwaukee residents and car owners (particularly Kia/Hyundai drivers) about the rising trend of vehicle thefts.
 
-### Skills:
-Data preprocessing (encoding, feature selection).
+Empower the public to take preventative action through accessible, engaging, and accurate data storytelling.
 
-Exploratory data analysis (categorical vs. target relationships).
+Use infographic-style visuals suitable for platforms like local news, social media, or community bulletins.
 
-Supervised learning (logistic regression modeling).
+### Visualizations:
 
-Classification metrics (accuracy, confusion matrix).
+Stacked Area Chart: Shows rise in thefts over time by state.
 
-Visualization (bar charts, value counts, prediction histograms).
+Faceted Bar Charts: Compare seasonal theft patterns by vehicle type and state.
 
-### Technology:
-Python, pandas, matplotlib, seaborn, sklearn
+Donut & Pie Charts: Highlight top cities for thefts and monthly theft distributions.
+
+Stacked Bar Chart: Ranks top agencies by total reported thefts (2019–2022).
+
+Line & Column Charts: Emphasize trends in Milwaukee-specific data.
+
+### Data Cleaning:
+
+Merged and reshaped datasets from multiple sources.
+
+Filled missing values, recalculated percentages, renamed columns, and formatted dates.
+
+Applied thoughtful data preparation to ensure clean, accurate, and meaningful outputs.
+
+### Design Approach:
+
+Gestalt principles (alignment, proximity, similarity) guide visual layout.
+
+Accessible fonts, intuitive color coding, and thoughtful label placement ensure readability.
+
+Visuals optimized for clarity and impact—no prior data literacy required.
+
+### Tools & Technologies Used:
+
+R (Tidyverse, ggplot2, dplyr, tidyr)
+
+CSV and Google Sheets data sources
+
+Infographic-style data storytelling
+
+## [Are Taller NBA Players More Successful?](https://github.com/hmoore200/Portfolio/blob/main/TallNBAPlayers.ipynb )
+
+### Goal: 
+This project aims to analyze the performance trends of tall NBA players (6'7" and above) from 2000 onward. By examining key metrics like scoring efficiency, rebounds, and career achievements, the analysis seeks to uncover patterns in how height impacts player success in the modern NBA. The findings provide data-driven insights for player evaluation and team strategy.
+
+### Description: 
+  The project analyzed a dataset of NBA players from 2000 onward who are taller than 6'7". The dataset included player statistics such as effective field goal percentage (eFG%), points per game (PTS), rebounds per game (TRB), All-NBA team appearances, and Player Efficiency Rating (PER). The project involved loading and filtering the data, cleaning and preprocessing it, performing exploratory data analysis (EDA), and visualizing performance distributions across key metrics.
+
+
+### Skills: 
+Data cleaning Data preprocessing, Exploratory data analysis (EDA), Statistical analysis, Data visualization
+
+### Technology: 
+ Python, NumPy, Matplotlib, Jupyter Notebook
+
 
 ### Results:
-  Logistic Regression Performance:
-  
-  Achieved 87.67% accuracy on the test data.
-  
-  Model was better at predicting "No Attrition" than "Yes Attrition."
-  
-  Important Factors Identified:
-  
-  Overtime, Monthly Income, and Job Role showed strong correlations with attrition.
-  
-  Employees with overtime were more likely to leave.
+The analysis revealed that:
 
-### Key Insight:
+Effective field goal percentage (eFG%) for tall players averages 48.16%, with most falling between 44.5% and 53.7%.
 
-Logistic regression effectively modeled the probability of attrition, but improvements could be made with techniques like SMOTE (for imbalance) or more complex classifiers (e.g., Random Forests).
+Points per game (PTS) show a right-skewed distribution, with most players averaging 2–8 PPG.
 
-## [Natural Language Processing - Airline Reviews](https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb)
+Rebounding (TRB) clusters around 1.9–4.8 RPG for the majority of players.
 
-### Overview:
-This project leverages Natural Language Processing to classify IMDB movie reviews as positive or negative. The workflow includes cleaning and preprocessing text, feature extraction with TF-IDF, and training several classification models.
+All-NBA team selections are rare, with an average of just 0.17 appearances per player.
 
-### Key Features:
-
-Preprocessing: Removal of punctuation, stopwords, stemming, and tokenization.
-
-Feature Extraction: TF-IDF vectorization to represent text numerically.
-
-Models Used: Naive Bayes and Logistic Regression.
-
-Visualization: Word clouds and confusion matrix for interpretability.
-
-### Tools & Libraries:
-pandas, scikit-learn, nltk, wordcloud, matplotlib
-
-### Results:
-
-Best Accuracy: ~88% using Logistic Regression with TF-IDF features.
-
-Confusion Matrix: Demonstrated balanced performance on both positive and negative classes.
-
-Insights: Frequent positive review words included “great”, “amazing”, while negative reviews featured “bad”, “worst” prominently.
-
-## [Student Dropout Rate Analysis](https://github.com/hmoore200/Portfolio/blob/main/Student%20Dropout%20Rates.ipynb)
-
-### Overview:
-This regression project explores the Boston Housing dataset to build predictive models for median home prices. It involves exploratory analysis, multivariate regression, and model comparison.
-
-### Key Features:
-
-Data Analysis: Correlation matrix, pairplots, and feature importance visualization.
-
-Modeling: Linear Regression, Decision Tree, Random Forest.
-
-Evaluation Metrics: MAE, MSE, RMSE, R².
-
-Tools & Libraries:
-pandas, matplotlib, seaborn, scikit-learn
-
-### Results:
-
-Best Model: Random Forest Regressor with an R² score of ~0.87 on test data.
-
-Top Features: Number of rooms (RM), % lower status population (LSTAT), and pupil-teacher ratio (PTRATIO).
-
-Insight: More rooms and lower LSTAT values correlate with higher housing prices.
+The findings provide insights into the performance trends of taller NBA players in the modern era.
 
 
-### [Boston Housing Market Analysis](https://github.com/hmoore200/Portfolio/blob/main/Term%20Project%201-Boston%20Housing%20Market.ipynb)
-### Overview:
-This classification project analyzes student demographic and academic data to predict the likelihood of dropouts. It aims to help educators intervene early with at-risk students.
-
-### Key Features:
-
-Data Cleaning: Handling missing values and encoding categorical variables.
-
-Visualization: Heatmaps, boxplots, and distribution plots.
-
-Models Used: Logistic Regression and Random Forest Classifier.
-
-Evaluation Metrics: Accuracy, precision, recall, and F1-score.
-
-Tools & Libraries:
-pandas, matplotlib, seaborn, scikit-learn
-
-### Results:
-
-Best Model: Random Forest Classifier with accuracy around 91%.
-
-Important Predictors: GPA, number of absences, parental education level.
-
-Key Insight: Low GPA and high absenteeism were the strongest indicators of dropout risk.
