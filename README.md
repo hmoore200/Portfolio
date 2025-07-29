@@ -10,8 +10,7 @@
 
 
 ## Projects: 
-## Natural Language Processing - Airline Reviews
-[https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb](## Natural Language Processing - Airline Reviews)
+## [Natural Language Processing - Airline Reviews] (https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb)
 
 ### Overview:
 This project leverages Natural Language Processing to classify IMDB movie reviews as positive or negative. The workflow includes cleaning and preprocessing text, feature extraction with TF-IDF, and training several classification models.
