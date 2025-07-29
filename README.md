@@ -6,11 +6,11 @@
 
   With my studies and work experience, I honed my ability to work with complex data and developed a keen eye for identifying patterns and trends. I also gained experience in data management and statistical analysis, which I believe will be valuable assets moving forward in my career.
 
- [Resume](https://github.com/hmoore200/Portfolio/blob/885d61afa387a1c47df1acc93fa2e9811d22722e/Resume_2025.pdf)
+## [Resume](https://github.com/hmoore200/Portfolio/blob/885d61afa387a1c47df1acc93fa2e9811d22722e/Resume_2025.pdf)
 
 
 ## Projects: 
-## (https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb) Natural Language Processing - Airline Reviews
+## (https://github.com/hmoore200/Portfolio/blob/main/Milestone%202%20-Natural%20Language%20Processing.ipynb) [Natural Language Processing - Airline Reviews]
 
 ### Overview:
 This project leverages Natural Language Processing to classify IMDB movie reviews as positive or negative. The workflow includes cleaning and preprocessing text, feature extraction with TF-IDF, and training several classification models.
