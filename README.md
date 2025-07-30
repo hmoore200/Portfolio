@@ -71,7 +71,7 @@ Data Cleaning & Exploration: Handled missing values, converted date columns, and
 
 Exploratory Data Analysis (EDA): Generated visual insights through time plots, heatmaps, boxplots (holiday vs. non-holiday sales), and store comparison bar charts.
 
-Time Series Modeling: Applied ARIMA models to both the full dataset and individual stores (e.g., Store #4). Forecasted future sales and evaluated model accuracy using Root Mean Squared Error (RMSE).
+Time Series Modeling: Applied ARIMA models to both the full dataset and individual stores (e.g., Store #4). Forecasted sales and evaluated model accuracy using Root Mean Squared Error (RMSE).
 
 ### Insights & Recommendations:
 
